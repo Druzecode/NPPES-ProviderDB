@@ -1,0 +1,138 @@
+drop table provider;
+CREATE TABLE provider (
+	NPI varchar(10)
+	,EntityTypeCode varchar(1)
+	,ReplacementNPI varchar(10)
+	,EmployerIdentificationNumberEIN varchar(9)
+	,ProviderOrganizationNameLegalBusinessName varchar(70)
+	,ProviderLastNameLegalName varchar(35)
+	,ProviderFirstName varchar(20)
+	,ProviderMiddleName varchar(20)
+	,ProviderNamePrefixText varchar(5)
+	,ProviderNameSuffixText varchar(5)
+	,ProviderCredentialText varchar(20)
+	,ProviderOtherOrganizationName varchar(70)
+	,ProviderOtherOrganizationNameTypeCode varchar(1)
+	,ProviderOtherLastName varchar(35)
+	,ProviderOtherFirstName varchar(20)
+	,ProviderOtherMiddleName varchar(20)
+	,ProviderOtherNamePrefixText varchar(5)
+	,ProviderOtherNameSuffixText varchar(5)
+	,ProviderOtherCredentialText varchar(20)
+	,ProviderOtherLastNameTypeCode varchar(1)
+	,ProviderFirstLineBusinessMailingAddress varchar(55)
+	,ProviderSecondLineBusinessMailingAddress varchar(55)
+	,ProviderBusinessMailingAddressCityName varchar(40)
+	,ProviderBusinessMailingAddressStateName varchar(40)
+	,ProviderBusinessMailingAddressPostalCode varchar(20)
+	,ProviderBusinessMailingAddressCountryCodeIfoutsideUS varchar(2)
+	,ProviderBusinessMailingAddressTelephoneNumber varchar(20)
+	,ProviderBusinessMailingAddressFaxNumber varchar(20)
+	,ProviderFirstLineBusinessPracticeLocationAddress varchar(55)
+	,ProviderSecondLineBusinessPracticeLocationAddress varchar(55)
+	,ProviderBusinessPracticeLocationAddressCityName varchar(40)
+	,ProviderBusinessPracticeLocationAddressStateName varchar(40)
+	,ProviderBusinessPracticeLocationAddressPostalCode varchar(20)
+	,ProviderBusinessPracticeLocationAddressCountryCodeIfoutsideUS varchar(2)
+	,ProviderBusinessPracticeLocationAddressTelephoneNumber varchar(20)
+	,ProviderBusinessPracticeLocationAddressFaxNumber varchar(20)
+	,ProviderEnumerationDate varchar(10)
+	,LastUpdateDate varchar(10)
+	,NPIDeactivationReasonCode varchar(2)
+	,NPIDeactivationDate varchar(10)
+	,NPIReactivationDate varchar(10)
+	,ProviderGenderCode varchar(1)
+	,AuthorizedOfficialLastName varchar(35)
+	,AuthorizedOfficialFirstName varchar(20)
+	,AuthorizedOfficialMiddleName varchar(20)
+	,AuthorizedOfficialTitleorPosition varchar(35)
+	,AuthorizedOfficialTelephoneNumber varchar(20)
+	,IsSoleProprietor varchar(1)
+	,IsOrganizationSubpart varchar(1)
+	,ParentOrganizationLBN varchar(70)
+	,ParentOrganizationTIN varchar(9)
+	,AuthorizedOfficialNamePrefixText varchar(5)
+	,AuthorizedOfficialNameSuffixText varchar(5)
+	,AuthorizedOfficialCredentialText varchar(20)
+	,CertificationDate varchar(10)
+    ,HealthcareProviderTaxonomyGroup_1 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_2 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_3 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_4 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_5 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_6 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_7 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_8 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_9 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_10 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_11 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_12 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_13 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_14 varchar(10)
+    ,HealthcareProviderTaxonomyGroup_15 varchar(10)
+);
+
+drop table provider_identifier;
+CREATE TABLE provider_identifier (
+	NPI varchar(10)
+	,OtherIdentifier varchar(20)
+	,IdentifierTypeCode varchar(2)
+	,IdentifierState varchar(2)
+	,IdentifierIssuer varchar(80)
+);
+
+drop table provider_taxonomy;
+CREATE TABLE provider_taxonomy (
+	NPI varchar(10)
+	,TaxonomyCode varchar(10)
+    ,LicenseNumber varchar(20)
+    ,LicenseNumberStateCode varchar(2)
+    ,PrimaryTaxonomy varchar(1)
+);
+
+
+drop table provider_other_name;
+CREATE table provider_other_name (
+	NPI varchar(10)
+    ,ProviderOtherOrganizationName varchar (120)
+    ,ProviderOtherOrganizationNameTypeCode varchar(1)
+);
+
+drop table provider_practice_location;
+CREATE table provider_practice_location (
+	NPI varchar(10)
+    ,Address1 varchar (55)
+    ,Address2 varchar(55)
+    ,CityName varchar(40)
+    ,StateName varchar(40)
+    ,PostalCode varchar(20)
+    ,CountryCode varchar(2)
+    ,TelephoneNumber varchar(20)
+    ,TelephoneExtension varchar(5)
+    ,FaxNumber varchar(20)
+);
+
+
+drop table provider_endpoint;
+CREATE table provider_endpoint (
+	NPI varchar(10)
+    ,EndpointType varchar (50)
+    ,EndpointTypeDescription varchar(255)
+    ,Endpoint varchar(1000)
+    ,Affiliation varchar(1)
+    ,EndpointDescription varchar(1000)
+    ,AffiliationLegalBusinessName varchar(70)
+    ,UseCode varchar(25)
+    ,UseDescription varchar(100)
+    ,UseOtherDecription varchar(200)
+    ,ContentType varchar(25)
+    ,ContentDescription varchar(100)
+    ,OtherContentDescription varchar(200)
+    ,AffiliationAddressLineOne varchar(55)
+    ,AffiliationAddressLineTwo varchar(55)
+    ,AffiliationAddressCity varchar(40)
+    ,AffiliationAddressState varchar(40)
+    ,AffiliationAddressCountry varchar(2)
+    ,AffiliationAddressLinePostalCode varchar(20)
+);
+
