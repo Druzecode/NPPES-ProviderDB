@@ -3,10 +3,11 @@ using System.Diagnostics.Metrics;
 using System.Net.NetworkInformation;
 using System.Reflection.PortableExecutable;
 using System.Text;
+using System.Configuration;
 
 internal class Program
 {
-    private static string folder = ConfigurationManager.AppSettings["FileFolder"];
+    private static string? folder = ConfigurationManager.AppSettings["FileFolder"];
     private static List<string> tableColumns = new List<string>();
 
     private static void Main(string[] args)

@@ -18,8 +18,8 @@ namespace TestProviderData
 
         protected int total = 0;
 
-        protected string folder = ConfigurationManager.AppSettings["ConnectionString"];
-        protected string connectionString = ConfigurationManager.AppSettings["FileFolder"];
+        protected string? folder = ConfigurationManager.AppSettings["FileFolder"];
+        protected string? connectionString = ConfigurationManager.AppSettings["ConnectionString"];
 
         protected void LoadDataFromFile(string filename, string tableName, int expectedCols, Action<string[]> rowMethod, Action batchMethod)
         {

@@ -11,9 +11,9 @@ internal class Program
     private static void Main(string[] args)
     {
         
-        //new ProviderOtherNameLoad().Load();
-        //new ProviderPracticeLocationLoad().Load();
-        //new ProviderEndpointLoad().Load();
+        new ProviderOtherNameLoad().Load();
+        new ProviderPracticeLocationLoad().Load();
+        new ProviderEndpointLoad().Load();
         new ProviderLoad().Load();
 
         Console.WriteLine("Complete.  Press any key to exit.");
