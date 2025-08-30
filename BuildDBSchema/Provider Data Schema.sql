@@ -72,6 +72,9 @@ CREATE TABLE provider (
     ,HealthcareProviderTaxonomyGroup_15 varchar(10)
 );
 
+ALTER TABLE dbo.provider 
+ADD INDEX idx_p_npi (NPI);
+
 drop table provider_identifier;
 CREATE TABLE provider_identifier (
 	NPI varchar(10)
@@ -89,7 +92,6 @@ CREATE TABLE provider_taxonomy (
     ,LicenseNumberStateCode varchar(2)
     ,PrimaryTaxonomy varchar(1)
 );
-
 
 drop table provider_other_name;
 CREATE table provider_other_name (
